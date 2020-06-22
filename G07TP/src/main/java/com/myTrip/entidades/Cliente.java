@@ -63,7 +63,6 @@ public class Cliente {
 		{ return false; }
 
 		Cliente otherCliente = (Cliente) other;
-
 		return this.cpf.equals(otherCliente.cpf);
 	}
 

@@ -3,9 +3,9 @@ package com.myTrip.entidades;
 import java.util.Set;
 
 public class Agencia {
+	private Set<FormaDePagamento> formaPagamento;
     private String cnpj;
 	private String nome;
-	private Set<FormaDePagamento> formaPagamento;
 
     public Agencia(String cnpj, String nome, Set<FormaDePagamento> formaPagamento)
 	{

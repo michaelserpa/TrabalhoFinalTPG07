@@ -9,6 +9,11 @@ public class Local {
 		this.nomePais = nomePais;
 		this.nomeCidade = nomeCidade;
     }
+
+    public static Local novoLocal(String nomePais, String nomeCidade)
+	{
+		return new Local(nomePais,nomeCidade);
+    }
     
     public String nomeCidade(){
         return nomeCidade;

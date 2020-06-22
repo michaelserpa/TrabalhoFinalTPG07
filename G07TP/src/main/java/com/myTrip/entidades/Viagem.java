@@ -1,17 +1,15 @@
 package com.myTrip.entidades;
 
-import java.util.List;
-
 public class Viagem {
     private int id;
 	private Local origem;
-	private List<Local> destino;
+	private Local destino;
 	private Cliente cliente;
     private Agencia agencia;
     private TipoPlano tipo;
     private double custo;
 
-    public Viagem(int id, Local origem, List<Local> destino, Cliente cliente, Agencia agencia, TipoPlano tipo, double custo)
+    public Viagem(int id, Local origem, Local destino, Cliente cliente, Agencia agencia, TipoPlano tipo, double custo)
 	{
 		this.id = id;
         this.origem = origem;
@@ -22,12 +20,12 @@ public class Viagem {
         this.custo = custo;
     }
 
-    public static Viagem novaViagem(int id, Local origem, List<Local> destino, Cliente cliente, Agencia agencia, TipoPlano tipo, double custo)
+    public static Viagem novaViagem(int id, Local origem, Local destino, Cliente cliente, Agencia agencia, TipoPlano tipo, double custo)
 	{
 		return new Viagem(id,origem,destino,cliente,agencia,tipo,custo);
     }
     
-    public static Viagem viagemExistente(int id, Local origem, List<Local> destino, Cliente cliente, Agencia agencia, TipoPlano tipo, double custo)
+    public static Viagem viagemExistente(int id, Local origem, Local destino, Cliente cliente, Agencia agencia, TipoPlano tipo, double custo)
 	{
 		return new Viagem(id,origem,destino,cliente,agencia,tipo,custo);
     }
@@ -40,7 +38,7 @@ public class Viagem {
         return origem;
     }
 
-    public List<Local> destino(){
+    public Local destino(){
         return destino;
     }
 

@@ -48,6 +48,14 @@ public class Cliente {
         return qtdAvaliacoes;
     }
 
+    public void setqtdViagens(){
+        qtdViagens +=1;
+    }
+
+    public void setqtdAvaliacoes(){
+        qtdAvaliacoes +=1;
+    }
+
     public void formaPagamento(FormaDePagamento formaPagamento)
 	{
 		this.formaPagamento = formaPagamento;

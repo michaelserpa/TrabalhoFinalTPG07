@@ -30,6 +30,19 @@ public class RepositorioClienteMem implements RepositorioCliente
 		{
 			return Retorno.retornarFalha("Cliente Inexistente: " + cpf);
 		}
+		clientes.replace(cpf, cliente);
+		return Retorno.retornarSucesso(cliente);
+	}
+	@Override
+	public Retorno<Cliente> obterlistaPorCpf(String cpf)
+	{
+		Cliente cliente = clientes.get(cpf);
+		if (cliente == null)
+		{
+			return Retorno.retornarFalha("Cliente Inexistente: " + cpf);
+		}
+		cliente.setqtdViagens();
+		clientes.replace(cpf, cliente);
 		return Retorno.retornarSucesso(cliente);
     }
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyTrip - Criar Viagem</title>
+		<meta charset="utf-8">
+	</head>
+	<body background="imagens/fundo2.png">
+		<table border="0" width="900" align="center">
+			<tr>
+				<td height="89"><img src="imagens/logo.png"></td>
+				<td align="right"> 
+					<a href="tela1.html">Home</a> |
+					<a href="">Criar Viagem</a> |
+					<a href="tela3.html">Buscar Cliente</a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="left">
+					<h2>Criar viagem</h2>
+					<p>Por favor preencha o formulario abaixo:</p>
+					<hr>
+						CPF:
+						<input type="text" id="txtCpf" name="txtCpf"><br><br>
+						Origem:
+						<input type="text" id="txtOrigem" name="txtOrigem"><br><br>
+						Destino:
+						<input type="text" id="txtDestino" name="txtDestino"><br><br>
+						Forma de Pagamento:
+						<select name="txtFPag" id="txtFPag">
+	  						<option value="BOLETO">Boleto</option>
+	  						<option value="DEBITO">Débito</option>
+	  						<option value="CREDITO">Crédito</option>
+	  					</select><br><br>
+						Tipo de Plano:
+						<select name="txtTPlano" id="txtTPlano">
+	  						<option value="SIMPLES">Simples</option>
+	  						<option value="PADRAO">Padrão</option>
+	  						<option value="LUXO">Luxo</option>
+	  					</select><br><hr>
+						Nome Cliente:
+						<span id="nomeValor"> - </span><br><br>
+						Origem: 
+						<span id="origemValor"> - </span><br><br>
+						Destino:
+						<span id="destinoValor"> - </span><br><br>
+						Agência:
+						<span id="agenciaValor"> - </span><br><br>
+						Custo:
+						<span id="custoValor"> - </span><br><br>
+						<button id="btDados">Criar Viagem</button><br><br>
+						<span id="erro"></span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<h4>Todos direitos reservados a mim</h4>
+				</td>
+			</tr>
+		</table>
+		<script type="text/javascript" src=".\script2.js"></script>
+	</body>
+</html>

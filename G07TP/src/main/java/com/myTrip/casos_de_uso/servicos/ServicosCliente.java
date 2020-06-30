@@ -3,6 +3,7 @@ package com.myTrip.casos_de_uso.servicos;
 import com.myTrip.casos_de_uso.repositorios.RepositorioLocal;
 import com.myTrip.casos_de_uso.repositorios.RepositorioViagem;
 import com.myTrip.casos_de_uso.politicas.CalculoCustoTipo;
+import com.myTrip.casos_de_uso.politicas.SelecaoAgencia;
 import com.myTrip.casos_de_uso.repositorios.RepositorioAgencia;
 import com.myTrip.casos_de_uso.repositorios.RepositorioCliente;
 import com.myTrip.entidades.*;
@@ -40,12 +41,6 @@ public class ServicosCliente
 	public Viagem criarViagem(String cpf, String origem, String destino, String formaPagamento, String tipoPlano)
 	{
 
-		Retorno<Agencia> agencia = agencias.obterPorCnpj("12345678901234");
-		if (!agencia.ok())
-		{
-			throw new IllegalArgumentException("Agência não encotrada: " + origem);
-		}
-
 		TipoPlano tPlano;
 		try
 		{
@@ -72,6 +67,15 @@ public class ServicosCliente
 		if (!cliente.ok())
 		{
 			throw new IllegalArgumentException(cliente.mensagem());
+		}
+
+		SelecaoAgencia selecaoAgencia = new SelecaoAgencia();
+		String cnpjAgencia = selecaoAgencia.SelecionaAgencia(destino);
+
+		Retorno<Agencia> agencia = agencias.obterPorCnpj(cnpjAgencia);
+		if (!agencia.ok())
+		{
+			throw new IllegalArgumentException("Agência não encotrada: " + origem);
 		}
 
 		CalculoCustoTipo custoTipo = new CalculoCustoTipo();
